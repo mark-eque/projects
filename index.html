@@ -356,7 +356,7 @@ async function openContact(id) {
   try {
     const res = await fetch("/api/analyze",{
       method:"POST",headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({model:"claude-sonnet-4-20250514",max_tokens:1000,messages:[{role:"user",content:buildPrompt(c)}]})
+      body:JSON.stringify({model:"claude-sonnet-4-5",max_tokens:1000,messages:[{role:"user",content:buildPrompt(c)}]})
     });
     const data = await res.json();
     const text = data.content.map(b=>b.text||"").join("");
