@@ -438,8 +438,13 @@ function renderDetail(c, r) {
 function goBack() {
   activeId = null;
   liveMode = false;
-  document.getElementById('detail-pane').style.display = 'none';
-  document.getElementById('overview-pane').style.display = 'flex';
+  const det = document.getElementById('detail-pane');
+  const ov = document.getElementById('overview-pane');
+  det.style.display = 'none';
+  det.innerHTML = '';
+  ov.style.display = 'flex';
+  ov.style.flexDirection = 'column';
+  ov.style.overflow = 'hidden';
   renderContactList();
 }
 
